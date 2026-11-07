@@ -29,16 +29,21 @@ h1{font:700 clamp(34px,6vw,54px)/1.08 "Source Serif 4",Georgia,serif;margin:0 0 
 .links a:hover{border-color:var(--navy)}
 section{padding:40px 0}
 h2{font:700 13px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin:0 0 22px}
-.grid{display:grid;gap:22px}
-.card{display:grid;grid-template-columns:340px 1fr;align-items:center;gap:24px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.card img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#fff;align-self:center}
-html[lang="el"] .card img[data-el]{display:block}
-html[lang="en"] .card img[data-en]{display:block}
-.body{padding:20px 22px 20px 0;min-width:0}
+.grid{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.hero{display:block;background:#fff;border-bottom:1px solid var(--line)}
+.hero img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.hero.contain img{object-fit:contain;padding:10px}
+.hero.top img{object-position:top}
+.body{padding:20px 24px 22px;min-width:0}
 .meta{font-size:13px;color:var(--sub);margin-bottom:6px}
-.card h3{font:700 22px/1.25 "Source Serif 4",Georgia,serif;margin:0 0 8px;text-wrap:balance}
-.card p{margin:0 0 12px;color:var(--ink)}
+.card h3{font:700 24px/1.25 "Source Serif 4",Georgia,serif;margin:0 0 8px;text-wrap:balance}
+.card p{margin:0 0 12px;color:var(--ink);max-width:70ch}
 .num{font-weight:600;color:var(--red)}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.gal a{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
+.gal img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;object-position:top}
+.gal a:hover{border-color:var(--navy)}
 .acts{display:flex;flex-wrap:wrap;gap:8px}
 .acts a{font-size:13px;font-weight:600;text-decoration:none;background:var(--chip);color:var(--navy);border-radius:6px;padding:5px 10px}
 .acts a:hover{text-decoration:underline}
@@ -47,7 +52,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 48px;font-size:13px;color
 [data-en]{display:none}
 html[lang="en"] [data-el]{display:none}
 html[lang="en"] [data-en]{display:revert}
-@media (max-width:720px){.card{grid-template-columns:1fr}.body{padding:0 18px 18px}}
+@media (max-width:720px){.body{padding:16px 18px 18px}}
 </style>
 </head>
 <body>
@@ -76,7 +81,7 @@ html[lang="en"] [data-en]{display:revert}
   <div class="grid">
 
     <article class="card">
-      <img data-el src="img/card-inflation-el.png" alt="" loading="lazy"><img data-en src="img/card-inflation-en.png" alt="" loading="lazy">
+      <a class="hero cover" href="img/inflation-cover.jpg" target="_blank" rel="noopener"><img src="img/inflation-cover.jpg" alt="" loading="lazy"></a>
       <div class="body">
         <div class="meta"><span data-el>Athens Voice · 3 Νοεμβρίου 2026</span><span data-en>Athens Voice · 3 November 2026</span></div>
         <h3 data-el>Η ακρίβεια δεν μπαίνει σε κάθε νοικοκυριό από την ίδια πόρτα</h3>
@@ -89,11 +94,13 @@ html[lang="en"] [data-en]{display:revert}
           <a href="https://k-kolovos.github.io/greek-inflation-households/" target="_blank" rel="noopener"><span data-el>Υπολογίστε τον δικό σας πληθωρισμό</span><span data-en>Personal inflation calculator</span></a>
           <a href="https://github.com/k-kolovos/greek-inflation-households" target="_blank" rel="noopener"><span data-el>Δεδομένα και κώδικας</span><span data-en>Data and code</span></a>
         </div>
+      
+        <div class="gal"><a href="img/inflation-1.png" target="_blank" rel="noopener"><img src="img/inflation-1.png" alt="" loading="lazy"></a><a href="img/inflation-2.png" target="_blank" rel="noopener"><img src="img/inflation-2.png" alt="" loading="lazy"></a><a href="img/inflation-3.png" target="_blank" rel="noopener"><img src="img/inflation-3.png" alt="" loading="lazy"></a></div>
       </div>
     </article>
 
     <article class="card">
-      <img data-el src="img/card-holidays-el.png" alt="" loading="lazy"><img data-en src="img/card-holidays-en.png" alt="" loading="lazy">
+      <a class="hero contain" href="img/holidays-01-adynamia-diakopes.png" target="_blank" rel="noopener"><img src="img/holidays-01-adynamia-diakopes.png" alt="" loading="lazy"></a>
       <div class="body">
         <div class="meta"><span data-el>Athens Voice · 1 Οκτωβρίου 2026</span><span data-en>Athens Voice · 1 October 2026</span></div>
         <h3 data-el>Πόσο «τουριστική» είναι τελικά η Ελλάδα για τους ίδιους τους κατοίκους της;</h3>
@@ -106,11 +113,13 @@ html[lang="en"] [data-en]{display:revert}
           <a href="https://public.tableau.com/app/profile/konstantinos.kolovos5903/viz/WhyhalfofGreekscannotaffordaweekaway" target="_blank" rel="noopener"><span data-el>Διαδραστικά γραφήματα</span><span data-en>Interactive charts</span></a>
           <a href="https://github.com/k-kolovos/greek-holidays-income" target="_blank" rel="noopener"><span data-el>Δεδομένα και κώδικας</span><span data-en>Data and code</span></a>
         </div>
+      
+        <div class="gal"><a href="img/holidays-01-adynamia-diakopes.png" target="_blank" rel="noopener"><img src="img/holidays-01-adynamia-diakopes.png" alt="" loading="lazy"></a><a href="img/holidays-02-katalymata-2024.png" target="_blank" rel="noopener"><img src="img/holidays-02-katalymata-2024.png" alt="" loading="lazy"></a><a href="img/holidays-03-perifereies-2025.png" target="_blank" rel="noopener"><img src="img/holidays-03-perifereies-2025.png" alt="" loading="lazy"></a></div>
       </div>
     </article>
 
     <article class="card">
-      <img data-el src="img/card-school-el.png" alt="" loading="lazy"><img data-en src="img/card-school-en.png" alt="" loading="lazy">
+      <a class="hero cover" href="img/school-cover.png" target="_blank" rel="noopener"><img src="img/school-cover.png" alt="" loading="lazy"></a>
       <div class="body">
         <div class="meta"><span data-el>alfavita.gr, esos.gr · Αύγουστος και Οκτώβριος 2026</span><span data-en>alfavita.gr, esos.gr · August and October 2026</span></div>
         <h3 data-el>Το δημοτικό σχολείο του 2030 έχει ήδη γεννηθεί</h3>
@@ -123,11 +132,13 @@ html[lang="en"] [data-en]{display:revert}
           <a href="https://public.tableau.com/app/profile/konstantinos.kolovos5903/viz/GreecesPrimarySchoolof2030IsAlreadyBorn/Dashboard1" target="_blank" rel="noopener"><span data-el>Διαδραστικά γραφήματα</span><span data-en>Interactive dashboard</span></a>
           <a href="https://github.com/k-kolovos/greece-primary-school-2030" target="_blank" rel="noopener"><span data-el>Δεδομένα και κώδικας</span><span data-en>Data and code</span></a>
         </div>
+      
+        <div class="gal"><a href="img/school-1.png" target="_blank" rel="noopener"><img src="img/school-1.png" alt="" loading="lazy"></a><a href="img/school-2.png" target="_blank" rel="noopener"><img src="img/school-2.png" alt="" loading="lazy"></a><a href="img/school-dashboard.png" target="_blank" rel="noopener"><img src="img/school-dashboard.png" alt="" loading="lazy"></a></div>
       </div>
     </article>
 
     <article class="card">
-      <img data-el src="img/card-demographics-el.png" alt="" loading="lazy"><img data-en src="img/card-demographics-en.png" alt="" loading="lazy">
+      <a class="hero top" href="img/demographics-dashboard.png" target="_blank" rel="noopener"><img src="img/demographics-dashboard.png" alt="" loading="lazy"></a>
       <div class="body">
         <div class="meta"><span data-el>LinkedIn · 2026</span><span data-en>LinkedIn · 2026</span></div>
         <h3 data-el>Το δημογραφικό της Ελλάδας: 65 χρόνια σε δεδομένα</h3>
@@ -139,6 +150,8 @@ html[lang="en"] [data-en]{display:revert}
           <a href="https://public.tableau.com/views/GreecesDemographicDecline19602025/Demographics_GR" target="_blank" rel="noopener"><span data-el>Διαδραστικά γραφήματα</span><span data-en>Interactive dashboard</span></a>
           <a href="https://github.com/k-kolovos/greece-demographics" target="_blank" rel="noopener"><span data-el>Δεδομένα και κώδικας</span><span data-en>Data and code</span></a>
         </div>
+      
+        <div class="gal"><a href="img/demographics-dashboard.png" target="_blank" rel="noopener"><img src="img/demographics-dashboard.png" alt="" loading="lazy"></a></div>
       </div>
     </article>
 
