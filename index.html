@@ -30,8 +30,10 @@ h1{font:700 clamp(34px,6vw,54px)/1.08 "Source Serif 4",Georgia,serif;margin:0 0 
 section{padding:40px 0}
 h2{font:700 13px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin:0 0 22px}
 .grid{display:grid;gap:22px}
-.card{display:grid;grid-template-columns:300px 1fr;gap:24px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.card img{width:100%;height:100%;max-height:240px;object-fit:contain;object-position:center;background:#fff;display:block;padding:8px}
+.card{display:grid;grid-template-columns:340px 1fr;align-items:center;gap:24px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.card img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#fff;align-self:center}
+html[lang="el"] .card img[data-el]{display:block}
+html[lang="en"] .card img[data-en]{display:block}
 .body{padding:20px 22px 20px 0;min-width:0}
 .meta{font-size:13px;color:var(--sub);margin-bottom:6px}
 .card h3{font:700 22px/1.25 "Source Serif 4",Georgia,serif;margin:0 0 8px;text-wrap:balance}
@@ -45,7 +47,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 48px;font-size:13px;color
 [data-en]{display:none}
 html[lang="en"] [data-el]{display:none}
 html[lang="en"] [data-en]{display:revert}
-@media (max-width:720px){.card{grid-template-columns:1fr}.card img{max-height:200px}.body{padding:0 18px 18px}}
+@media (max-width:720px){.card{grid-template-columns:1fr}.body{padding:0 18px 18px}}
 </style>
 </head>
 <body>
@@ -74,7 +76,7 @@ html[lang="en"] [data-en]{display:revert}
   <div class="grid">
 
     <article class="card">
-      <img src="img/inflation.png" alt="" loading="lazy">
+      <img data-el src="img/card-inflation-el.png" alt="" loading="lazy"><img data-en src="img/card-inflation-en.png" alt="" loading="lazy">
       <div class="body">
         <div class="meta"><span data-el>Athens Voice · 3 Νοεμβρίου 2026</span><span data-en>Athens Voice · 3 November 2026</span></div>
         <h3 data-el>Η ακρίβεια δεν μπαίνει σε κάθε νοικοκυριό από την ίδια πόρτα</h3>
@@ -91,7 +93,7 @@ html[lang="en"] [data-en]{display:revert}
     </article>
 
     <article class="card">
-      <img src="img/holidays.png" alt="" loading="lazy">
+      <img data-el src="img/card-holidays-el.png" alt="" loading="lazy"><img data-en src="img/card-holidays-en.png" alt="" loading="lazy">
       <div class="body">
         <div class="meta"><span data-el>Athens Voice · 1 Οκτωβρίου 2026</span><span data-en>Athens Voice · 1 October 2026</span></div>
         <h3 data-el>Πόσο «τουριστική» είναι τελικά η Ελλάδα για τους ίδιους τους κατοίκους της;</h3>
@@ -108,7 +110,7 @@ html[lang="en"] [data-en]{display:revert}
     </article>
 
     <article class="card">
-      <img src="img/school-2024-25.png" alt="" loading="lazy">
+      <img data-el src="img/card-school-el.png" alt="" loading="lazy"><img data-en src="img/card-school-en.png" alt="" loading="lazy">
       <div class="body">
         <div class="meta"><span data-el>alfavita.gr, esos.gr · Αύγουστος και Οκτώβριος 2026</span><span data-en>alfavita.gr, esos.gr · August and October 2026</span></div>
         <h3 data-el>Το δημοτικό σχολείο του 2030 έχει ήδη γεννηθεί</h3>
@@ -125,7 +127,7 @@ html[lang="en"] [data-en]{display:revert}
     </article>
 
     <article class="card">
-      <img src="img/demographics.png" alt="" loading="lazy">
+      <img data-el src="img/card-demographics-el.png" alt="" loading="lazy"><img data-en src="img/card-demographics-en.png" alt="" loading="lazy">
       <div class="body">
         <div class="meta"><span data-el>LinkedIn · 2026</span><span data-en>LinkedIn · 2026</span></div>
         <h3 data-el>Το δημογραφικό της Ελλάδας: 65 χρόνια σε δεδομένα</h3>
