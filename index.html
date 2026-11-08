@@ -17,7 +17,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-u
 a{color:var(--navy)}
 .wrap{max-width:980px;margin:0 auto;padding:0 max(20px,env(safe-area-inset-left)) 0 max(20px,env(safe-area-inset-right))}
 header{padding:56px 0 28px;border-bottom:1px solid var(--line)}
-.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:40px}
+.top{display:flex;justify-content:flex-end;align-items:center;gap:16px;margin-bottom:40px}
 .mark{font:600 13px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--sub)}
 .lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
 .lang button{border:0;background:none;color:var(--sub);font:600 13px Inter,sans-serif;padding:6px 14px;cursor:pointer}
@@ -59,7 +59,6 @@ html[lang="en"] [data-en]{display:revert}
 <div class="wrap">
 <header>
   <div class="top">
-    <span class="mark" data-el>Ανάλυση δεδομένων · Ελλάδα</span><span class="mark" data-en>Data analysis · Greece</span>
     <div class="lang" role="group" aria-label="Language">
       <button type="button" data-set="el" aria-pressed="true">ΕΛ</button>
       <button type="button" data-set="en" aria-pressed="false">EN</button>
